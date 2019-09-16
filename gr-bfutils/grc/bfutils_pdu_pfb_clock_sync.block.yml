@@ -1,0 +1,45 @@
+id: bfutils_pdu_pfb_clock_sync
+label: Polyphase Clock Sync (PDU)
+category: '[bfutils]'
+
+templates:
+  imports: import bfutils
+  make: bfutils.pdu_pfb_clock_sync(${sps}, ${loop_bw}, ${taps}, ${filter_size},
+        ${init_phase}, ${max_dev}, ${osps})
+
+parameters:
+-   id: sps
+    label: Samples/Symbol
+    dtype: real
+-   id: loop_bw
+    label: Loop Bandwidth
+    dtype: real
+-   id: taps
+    label: Taps
+    dtype: real_vector
+-   id: filter_size
+    label: Filter Size
+    dtype: int
+    default: '32'
+-   id: init_phase
+    label: Initial Phase
+    dtype: real
+    default: '16'
+-   id: max_dev
+    label: Maximum Rate Deviation
+    dtype: real
+    default: '1.5'
+-   id: osps
+    label: Output SPS
+    dtype: int
+    default: '1'
+
+inputs:
+-   id: 'pdu'
+    domain: message
+
+outputs:
+-   id: 'pdu'
+    domain: message
+
+file_format: 1

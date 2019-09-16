@@ -1,0 +1,20 @@
+id: bfutils_weights_to_matrix_a
+label: Weights to Matrix A
+category: '[bfutils]'
+
+templates:
+  imports: import bfutils
+  make: bfutils.weights_to_matrix_a()
+
+
+inputs:
+- label: weights
+  domain: message
+  optional: True
+
+outputs:
+- label: A
+  domain: message
+  optional: True
+
+file_format: 1

@@ -1,0 +1,34 @@
+id: bfutils_weights_to_plot
+label: Weights to Plot (ULA Assumptions)
+category: '[bfutils]'
+
+templates:
+  imports: import bfutils
+  make: bfutils.weights_to_plot(${num_elements},${sep_lambda},${log_response})
+  callbacks:
+  - set_sep_lambda(${sep_lambda})
+  - set_log_response(${log_response})
+parameters:
+- id: num_elements
+  label: Number of Elements
+  dtype: int
+  default: 4
+- id: sep_lambda
+  label: Separation in lambda
+  dtype: float
+  default: 0.5
+- id: log_response
+  label: Log Response
+  dtype: bool
+  default: True
+
+inputs:
+- label: weights
+  domain: message
+  optional: 1
+outputs:
+- label: plot
+  domain: message
+  optional: 1
+
+file_format: 1

@@ -1,0 +1,42 @@
+id: bfutils_calc_array_weights
+label: Calculate Array Weights
+category: '[bfutils]'
+
+templates:
+  imports: import bfutils
+  make: bfutils.calc_array_weights(${num_elements},${preamble},${bf_mode})
+
+# <!-- Make one 'parameters' list entry for every Parameter you want settable from the GUI.
+#      Sub-entries of dictionary:
+#      * id (makes the value accessible as \$keyname, e.g. in the make entry)
+#      * label
+#      * dtype -->
+parameters:
+- id: num_elements
+  label: Number of Apertures
+  dtype: int
+- id: preamble
+  label: Modulated Preamble
+  dtype: complex_vector
+- id: bf_mode
+  label: Weight Calculation
+  dtype: enum
+  options: [bfutils.MMSE,bfutils.INTF_NULLING]
+  option_labels: ['MMSE']
+  default: bfutils.MMSE
+# <!-- Make one 'inputs' list entry per input. Sub-entries of dictionary:
+#      * label (an identifier for the GUI)
+#      * domain
+#      * dtype
+#      * vlen
+#      * optional (set to 1 for optional inputs) -->
+inputs:
+- label: pdus
+  domain: message
+
+outputs:
+- label: weights
+  domain: message
+  optional: True
+
+file_format: 1

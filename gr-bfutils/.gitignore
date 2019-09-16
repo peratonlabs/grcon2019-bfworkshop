@@ -1,0 +1,7 @@
+.vscode/
+.debug/
+build/
+examples/*.py
+**/__pycache__/
+core
+examples/epy_*

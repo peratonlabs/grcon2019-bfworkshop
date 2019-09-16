@@ -1,0 +1,30 @@
+id: bfutils_interference_nulling
+label: Calculate Null Space Weights
+category: '[bfutils]'
+
+templates:
+  imports: import bfutils
+  make: bfutils.interference_nulling(${num_elements},${nulling_dims})
+
+parameters:
+- id: num_elements
+  label: Number of Apertures
+  dtype: int
+  default: 4
+- id: nulling_dims
+  label: Null Space Dimension
+  dtype: int
+  default: 1
+inputs:
+- label: pdus
+  domain: message
+
+outputs:
+- label: weights
+  domain: message
+  optional: True
+- label: eigenvalues
+  domain: message
+  optional: True
+
+file_format: 1

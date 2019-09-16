@@ -1,0 +1,41 @@
+id: bfutils_polar_plot
+label: PyQT Polar Plot
+category: '[bfutils]'
+
+
+parameters:
+-   id: autoscale
+    label: Autoscale
+    dtype: bool
+    default: True
+-   id: log_scale
+    label: Log Scale
+    dtype: bool
+    default: True
+-   id: plot_depth
+    label: Plot Depth
+    dtype: float
+    default: 70.0
+-   id: gui_hint
+    label: GUI Hint
+    dtype: gui_hint
+    hide: part
+inputs:
+-   domain: message
+    id: plot
+    optional: true
+
+templates:
+  imports: import bfutils
+  make: |-
+    <%
+        win = 'self._%s_win'%id
+    %>\
+    bfutils.polar_plot(${autoscale},${log_scale},${plot_depth})
+    ${win} = self.${id}
+    ${gui_hint() % win}
+
+
+
+file_format: 1
+
