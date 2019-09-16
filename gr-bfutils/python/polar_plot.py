@@ -27,12 +27,14 @@ from gnuradio.gr import pmt
 import pyqtgraph as pg
 from pyqtgraph import PlotWidget
 from pyqtgraph.Qt import QtGui, QtCore
+# from PyQt5 import QtCore
 import math
 
 class polar_plot(gr.sync_block, PlotWidget):
     """
     docstring for block test_gui
     """
+    sigUpdateData = QtCore.Signal(object, object)
     def __init__(self, autoscale, log_plot, plot_depth_db, *args):
         gr.sync_block.__init__(self,
             name="polar_plot",
@@ -59,6 +61,7 @@ class polar_plot(gr.sync_block, PlotWidget):
         self.message_port_register_in(pmt.intern("plot"))
         self.set_msg_handler(pmt.intern("plot"), self.handler)
     
+        self.sigUpdateData.connect(self.updateGraph)
 
     # Polar to Cartesian
     def pol_to_car_x(self,r,theta):
@@ -90,16 +93,11 @@ class polar_plot(gr.sync_block, PlotWidget):
         # theta = np.array(np.linspace(-90.0,90.0,1801), dtype=np.float32)
         # r = np.random.uniform(0.0, 1.0, size=(1801,))
 
+        
         d = pmt.to_python(msg)
         r = d['r']
         theta = d['theta']
 
-        self.updateGraph(theta, r)
+        # self.updateGraph(theta, r)
+        self.sigUpdateData.emit(theta,r)
         
-        #self.do_plot(0)
-        
-        # self.emit(QtCore.SIGNAL("newWeights(PyQt_PyObject)"), all_weights)
-        
-
-        # trigger update
-       #self.emit(QtCore.SIGNAL("updatePlot(int)"), x)
