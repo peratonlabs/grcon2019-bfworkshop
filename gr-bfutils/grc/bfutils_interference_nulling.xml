@@ -1,0 +1,33 @@
+<block>
+  <name>Calculate Null Space Weights</name>
+  <key>bfutils_interference_nulling</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.interference_nulling($num_elements, $nulling_dims)</make>
+  <param>
+    <name>Num_elements</name>
+    <key>num_elements</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Nulling_dims</name>
+    <key>nulling_dims</key>
+    <type>raw</type>
+  </param>
+
+  <sink>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+  <source>
+    <name>weights</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+  <source>
+    <name>eigenvalues</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+</block>

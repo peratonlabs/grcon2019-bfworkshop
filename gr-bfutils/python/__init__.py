@@ -22,19 +22,18 @@
 This is the GNU Radio BFUTILS module. Place your Python package
 description here (python/__init__.py).
 '''
-from __future__ import unicode_literals
 
 # import swig generated symbols into the bfutils namespace
 try:
-    # this might fail if the module is python-only
-    from .bfutils_swig import *
+	# this might fail if the module is python-only
+	from bfutils_swig import *
 except ImportError:
-    pass
+	pass
 
 # import any pure python here
-from .ula_sim import ula_sim
-from .polar_plot import polar_plot
-from .weights_to_matrix_a import weights_to_matrix_a
-from .manual_beamsteering import manual_beamsteering
-from .weights_to_plot import weights_to_plot
+from polar_plot import polar_plot
+from manual_beamsteering import manual_beamsteering
+from ula_sim import ula_sim
+from weights_to_matrix_a import weights_to_matrix_a
+from weights_to_plot import weights_to_plot
 #

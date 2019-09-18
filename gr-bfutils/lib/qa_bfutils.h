@@ -27,12 +27,12 @@
 #include <gnuradio/attributes.h>
 #include <cppunit/TestSuite.h>
 
-//! collect all the tests for the gr-bfutils directory
+//! collect all the tests for the gr-filter directory
 
 class __GR_ATTR_EXPORT qa_bfutils
 {
  public:
-  //! return suite of tests for all of gr-bfutils directory
+  //! return suite of tests for all of gr-filter directory
   static CppUnit::TestSuite *suite();
 };
 

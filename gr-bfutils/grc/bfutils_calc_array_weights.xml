@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<block>
+  <name>Calc Array Weights</name>
+  <key>bfutils_calc_array_weights</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.calc_array_weights($num_elements,$preamble,$bf_mode)</make>
+
+  <param>
+    <name>Number of Apertures</name>
+    <key>num_elements</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Modulated Preamble</name>
+    <key>preamble</key>
+    <type>complex_vector</type>
+  </param>
+  <param>
+    <name>BF Mode</name>
+    <key>bf_mode</key>
+    <value>bfutils.MMSE</value>
+    <type>enum</type>
+    <option>
+      <name>MMSE</name>
+      <key>bfutils.MMSE</key>
+    </option>
+  </param>
+
+  <sink>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+
+  <source>
+    <name>weights</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+</block>

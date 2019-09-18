@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+  <name>Weights to Matrix A</name>
+  <key>bfutils_weights_to_matrix_a</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.weights_to_matrix_a()</make>
+  <sink>
+    <name>weights</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+  <source>
+    <name>A</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+</block>

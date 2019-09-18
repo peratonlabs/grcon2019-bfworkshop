@@ -26,7 +26,7 @@ import numpy as np
 
 import pmt
 
-class weights_to_matrix_a(gr.sync_block):
+class weights_to_matrix_a(gr.basic_block):
     """
     Converts calculated weights to Matrix A format expected by Multiply Matrix block
     """

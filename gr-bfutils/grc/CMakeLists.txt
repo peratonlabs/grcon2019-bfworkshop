@@ -19,13 +19,14 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    bfutils_preamble_to_pdu.block.yml
-    bfutils_ula_sim.block.yml
-    bfutils_calc_array_weights.block.yml
-    bfutils_polar_plot.block.yml
-    bfutils_pdu_pfb_clock_sync.block.yml
-    bfutils_weights_to_matrix_a.block.yml
-    bfutils_manual_beamsteering.block.yml
-    bfutils_weights_to_plot.block.yml
-    bfutils_interference_nulling.block.yml DESTINATION share/gnuradio/grc/blocks
+    bfutils_manual_beamsteering.xml
+    bfutils_ula_sim.xml
+    bfutils_weights_to_matrix_a.xml
+    bfutils_weights_to_plot.xml
+    bfutils_ula_sim.xml
+    bfutils_calc_array_weights.xml
+    bfutils_polar_plot.xml
+    bfutils_interference_nulling.xml
+    bfutils_pdu_pfb_clock_sync.xml
+    bfutils_preamble_to_pdu.xml DESTINATION share/gnuradio/grc/blocks
 )

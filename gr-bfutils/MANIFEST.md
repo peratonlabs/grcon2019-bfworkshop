@@ -1,12 +1,9 @@
-title: gr-bfutils
-brief: Utilities for Beamforming and Array Processing
+title: The BFUTILS OOT Module
+brief: Short description of gr-bfutils
 tags: # Tags are arbitrary, but look at CGRAN what other authors are using
   - sdr
-  - beamforming
-  - array processing
-  - 
 author:
-  - Perspecta Labs
+  - Author Name <authors@email.address>
 copyright_owner:
   - Copyright Owner 1
 license:
@@ -14,3 +11,6 @@ license:
 #website: <module_website> # If you have a separate project website, put it here
 #icon: <icon_url> # Put a URL to a square image here that will be used as an icon on CGRAN
 ---
+A longer, multi-line description of gr-bfutils.
+You may use some *basic* Markdown here.
+If left empty, it will try to find a README file instead.

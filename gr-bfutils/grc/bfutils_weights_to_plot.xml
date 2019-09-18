@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<block>
+  <name>Weights to Plot (ULA Assumptions)</name>
+  <key>bfutils_weights_to_plot</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.weights_to_plot($num_elements,$sep_lambda,$log_response)</make>
+  <param>
+    <name>Number of Apertures</name>
+    <key>num_elements</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Separation in lambda</name>
+    <key>sep_lambda</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Log Response</name>
+    <key>log_response</key>
+    <value>True</value>
+    <type>bool</type>
+  </param>
+
+  <sink>
+    <name>weights</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+
+  <source>
+    <name>plot</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+</block>

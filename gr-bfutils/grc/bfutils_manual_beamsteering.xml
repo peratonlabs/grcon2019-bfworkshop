@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<block>
+  <name>Manual Beamsteering</name>
+  <key>bfutils_manual_beamsteering</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.manual_beamsteering($num_elements, $sep_lambda, $angle_degrees)</make>
+  <callback>set_angle_degrees($angle_degrees)</callback>
+  <param>
+    <name>Number of Apertures</name>
+    <key>num_elements</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Separation in lambda</name>
+    <key>sep_lambda</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Angle (degrees)</name>
+    <key>angle_degrees</key>
+    <type>float</type>
+  </param>
+
+  <source>
+    <name>weights</name>
+    <type>message</type>
+  </source>
+</block>

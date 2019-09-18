@@ -1,0 +1,53 @@
+<block>
+  <name>Polyphase Clock Sync (PDU)</name>
+  <key>bfutils_pdu_pfb_clock_sync</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.pdu_pfb_clock_sync($sps, $loop_bw, $taps, $filter_size, $init_phase, $max_rate_deviation, $osps)</make>
+  <param>
+    <name>Sps</name>
+    <key>sps</key>
+    <type>real</type>
+  </param>
+  <param>
+    <name>Loop_bw</name>
+    <key>loop_bw</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Taps</name>
+    <key>taps</key>
+    <type>real_vector</type>
+  </param>
+  <param>
+    <name>Filter_size</name>
+    <key>filter_size</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Init_phase</name>
+    <key>init_phase</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Max_rate_deviation</name>
+    <key>max_rate_deviation</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Osps</name>
+    <key>osps</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>pdu</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+  <source>
+    <name>pdu</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+
+</block>

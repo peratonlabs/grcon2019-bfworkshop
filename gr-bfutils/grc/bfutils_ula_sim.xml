@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<block>
+  <name>Uniform Linear Array Simulator</name>
+  <key>bfutils_ula_sim</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.ula_sim($num_elements, $sep_lambda, $angle_degrees, $log_response)</make>
+  <callback>set_angle_degrees($angle_degrees)</callback>
+  <callback>set_sep_lambda($sep_lambda)</callback>
+  <callback>set_log_response($log_response)</callback>
+
+  <param>
+    <name>Number of Apertures</name>
+    <key>num_elements</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Separation in lambda</name>
+    <key>sep_lambda</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Angle (degrees)</name>
+    <key>angle_degrees</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Log Response</name>
+    <key>log_response</key>
+    <value>True</value>
+    <type>bool</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>weights</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>$num_elements</vlen>
+  </source>
+  <source>
+    <name>plot</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>
+</block>

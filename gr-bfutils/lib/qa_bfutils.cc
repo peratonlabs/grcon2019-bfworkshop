@@ -21,7 +21,7 @@
  */
 
 /*
- * This class gathers together all the test cases for the gr-bfutils
+ * This class gathers together all the test cases for the gr-filter
  * directory into a single test suite.  As you create new test cases,
  * add them here.
  */

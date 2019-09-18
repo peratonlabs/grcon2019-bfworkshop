@@ -1,0 +1,32 @@
+<block>
+  <name>Correlated Stream to PDU</name>
+  <key>bfutils_preamble_to_pdu</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>bfutils.preamble_to_pdu($num_elements, $data_length, $corr_tag)</make>
+  <param>
+    <name>Num_elements</name>
+    <key>num_elements</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Data_length</name>
+    <key>data_length</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Corr_tag</name>
+    <key>corr_tag</key>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$num_elements</vlen>
+  </sink>
+  <source>
+    <name>pdus</name>
+    <type>message</type>
+    <optional>True</optional>
+  </source>  
+</block>

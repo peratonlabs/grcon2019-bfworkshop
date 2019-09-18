@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<block>
+  <name>Polar Plot</name>
+  <key>bfutils_polar_plot</key>
+  <category>[bfutils]</category>
+  <import>import bfutils</import>
+  <make>#set $win = 'self._%s_win'%$id
+bfutils.polar_plot($autoscale,$log_scale,$plot_depth)
+$(win) = self.$(id)
+$(gui_hint() % $win)</make>
+
+  <param>
+    <name>Autoscale</name>
+    <key>autoscale</key>
+    <value>True</value>
+    <type>bool</type>
+  </param>
+    <param>
+    <name>Log Scale</name>
+    <key>log_scale</key>
+    <value>True</value>
+    <type>bool</type>
+  </param>
+  <param>
+    <name>Plot Depth</name>
+    <key>plot_depth</key>
+    <value>70.0</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>GUI Hint</name>
+    <key>gui_hint</key>
+    <value></value>
+    <type>gui_hint</type>
+    <hide>part</hide>
+  </param>
+  <sink>
+    <name>plot</name>
+    <type>message</type>
+    <optional>True</optional>
+  </sink>
+</block>

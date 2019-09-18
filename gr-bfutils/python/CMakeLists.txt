@@ -32,11 +32,11 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    ula_sim.py
-    polar_plot.py
-    weights_to_matrix_a.py
     manual_beamsteering.py
-    weights_to_plot.py DESTINATION ${GR_PYTHON_DIR}/bfutils
+    ula_sim.py
+    weights_to_matrix_a.py
+    weights_to_plot.py
+    polar_plot.py DESTINATION ${GR_PYTHON_DIR}/bfutils
 )
 
 ########################################################################
@@ -46,7 +46,3 @@ include(GrTest)
 
 set(GR_TEST_TARGET_DEPS gnuradio-bfutils)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
-GR_ADD_TEST(qa_tx_bf_singletap_hier ${PYTHON_EXECUTABLE} \"${CMAKE_CURRENT_SOURCE_DIR}\"/qa_tx_bf_singletap_hier.py)
-GR_ADD_TEST(qa_rx_bf_singletap_hier ${PYTHON_EXECUTABLE} \"${CMAKE_CURRENT_SOURCE_DIR}\"/qa_rx_bf_singletap_hier.py)
-GR_ADD_TEST(qa_ula_sim ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_ula_sim.py)
-GR_ADD_TEST(qa_calc_array_weights ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_calc_array_weights.py)
