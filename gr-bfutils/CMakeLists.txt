@@ -91,7 +91,7 @@ include(GrVersion)
 
 include(GrPlatform) #define LIB_SUFFIX
 
-find_package(Armadillo)
+find_package(Armadillo REQUIRED)
 find_package(GSL)
 
 if(NOT CMAKE_MODULES_DIR)
